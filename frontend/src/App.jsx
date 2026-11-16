@@ -1,0 +1,48 @@
+import { createBrowserRouter, RouterProvider } from "react-router";
+import Home from "./pages/Home";
+import Login from "./pages/login";
+import Signup from "./pages/signup";
+import ProductDetails from "./pages/productDetails";
+import AddProduct from "./admin/AddProduct";
+import EditProduct from "./admin/EditProduct";
+import ProductList from "./admin/ProductList";
+import Cart from "./pages/Cart";
+import Navbar from "./components/Navbar";
+import { Outlet } from "react-router";
+import CheckoutAddress from "./pages/CheckoutAddress";
+import Checkout from "./pages/Checkout";
+import OrderSucess from "./pages/OrderSucess";
+
+function Layout() {
+    return (
+        <>
+            <Navbar />
+            <Outlet />
+        </>
+    )
+}
+
+const router = createBrowserRouter([
+    {
+        element: <Layout />,
+        children: [
+            { path: "/", element: <Home /> },
+            { path: "/login", element: <Login /> },
+            { path: "/signup", element: <Signup /> },
+            { path: "/product/:id", element: <ProductDetails /> },
+
+            { path: "/admin/products", element: <ProductList /> },
+            { path: "/admin/products/add", element: <AddProduct /> },
+            { path: "/admin/products/update/:id", element: <EditProduct /> },
+            { path: "/cart", element: <Cart /> },
+            { path: "/checkout-address", element: <CheckoutAddress/>},
+            { path: "/checkout", element: <Checkout/>},
+            { path: "/order-sucess/:id", element:<OrderSucess />},
+        ]
+    }
+
+]);
+
+export default function App() {
+    return <RouterProvider router={router} />;
+}
