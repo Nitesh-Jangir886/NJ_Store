@@ -1,14 +1,13 @@
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import Home from "./pages/Home";
-import Login from "./pages/login";
-import Signup from "./pages/signup";
-import ProductDetails from "./pages/productDetails";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import ProductDetails from "./pages/ProductDetails";
 import AddProduct from "./admin/AddProduct";
 import EditProduct from "./admin/EditProduct";
 import ProductList from "./admin/ProductList";
 import Cart from "./pages/Cart";
 import Navbar from "./components/Navbar";
-import { Outlet } from "react-router";
 import CheckoutAddress from "./pages/CheckoutAddress";
 import Checkout from "./pages/Checkout";
 import OrderSucess from "./pages/OrderSucess";
